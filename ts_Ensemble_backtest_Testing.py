@@ -111,7 +111,7 @@ data = pd.concat([prdData_avg, yActDf], axis=1)
 Options
 Method = Average by Variable
 Model Scoring Window = 156 Weeks
-Model Scoring Method = Pct argmin
+Model Scoring Method = Pct argmax
 '''
 
 #test Volatility Estimation Power
@@ -119,7 +119,7 @@ window = 156
 #get prediction result
 err = getPct(data, window)
 #choose BestModel
-bestModel = err.apply(lambda x: err.columns[x.argmin()], axis=1).shift(4).dropna()
+bestModel = err.apply(lambda x: err.columns[x.argmax()], axis=1).shift(4).dropna()
 #bestModel = pd.DataFrame(np.full(len(bestModel), 0), index=bestModel.index)
 bestModel = pd.DataFrame(bestModel)
 #append prediction value of BestModel
