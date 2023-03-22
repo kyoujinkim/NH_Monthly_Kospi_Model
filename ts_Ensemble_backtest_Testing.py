@@ -114,7 +114,6 @@ Model Scoring Window = 156 Weeks
 Model Scoring Method = Pct argmax
 '''
 
-#test Volatility Estimation Power
 window = 156
 #get prediction result
 err = getPct(data, window)
